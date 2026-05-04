@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/TrackIO.API/TrackIO.API.csproj" />
+  <Project Path="src/TrackIO.Application/TrackIO.Application.csproj" Id="08657c3b-5e8c-49d9-b33d-22d2836f7f0c" />
+  <Project Path="src/TrackIO.Domain/TrackIO.Domain.csproj" />
+  <Project Path="src/TrackIO.Infrastructure/TrackIO.Infrastructure.csproj" Id="07352b53-59c1-40f2-9180-fb7c19f2e058" />
+</Solution>
