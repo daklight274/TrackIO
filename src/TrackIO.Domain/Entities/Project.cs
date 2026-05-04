@@ -15,6 +15,7 @@ namespace TrackIO.Domain.Entities
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime CreatedAt { get; set; }
+        public int ParticipantCount { get; set; }
 
         // Navigation Properties
         public User Owner { get; set; } = null!;

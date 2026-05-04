@@ -58,7 +58,7 @@ namespace TrackIO.Infrastructure.Data
                 e.HasOne(x => x.Project)
                  .WithMany()
                  .HasForeignKey(x => x.ProjectId)
-                 .OnDelete(DeleteBehavior.Restrict);
+                 .OnDelete(DeleteBehavior.Cascade);
 
                 e.HasIndex(x => new { x.ProjectId, x.UserId }).IsUnique();
             });
