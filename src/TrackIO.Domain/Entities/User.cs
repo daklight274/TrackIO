@@ -19,5 +19,6 @@ namespace TrackIO.Domain.Entities
         public bool IsAdmin { get; set; } = false;
 
         public ICollection<ProjectMember> ProjectMembers{ get; set; } = [];
+        public ICollection<RefreshToken> RefreshTokens { get; set; } = [];
     }
 }

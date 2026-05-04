@@ -19,6 +19,7 @@ namespace TrackIO.Infrastructure.Data
         public DbSet<ProjectTask> ProjectTasks => Set<ProjectTask>();
         public DbSet<Comment> Comments => Set<Comment>();
         public DbSet<Attachment> Attachments => Set<Attachment>();
+        public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -108,6 +109,17 @@ namespace TrackIO.Infrastructure.Data
                 e.HasKey(x => x.Id);
                 e.Property(x => x.FileName).HasMaxLength(1000);
                 e.Property(x => x.FilePath).HasMaxLength(1000);
+            });
+
+            modelBuilder.Entity<RefreshToken>(e =>
+            {
+                e.HasKey(x => x.Id);
+                e.Property(x => x.Token).HasMaxLength(100).IsRequired();
+
+                e.HasOne(x => x.User)
+                 .WithMany()
+                 .HasForeignKey(x => x.UserId)
+                 .OnDelete(DeleteBehavior.Restrict);
             });
         }
     }
